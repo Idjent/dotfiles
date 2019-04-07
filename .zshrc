@@ -94,6 +94,10 @@ export ARCHFLAGS="-arch x86_64"
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # User
+
+# pywal
+(cat ~/.cache/wal/sequences &)
+
 # export
 export XDG_CONFIG_HOME="$HOME/.config"
 

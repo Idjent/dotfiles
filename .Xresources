@@ -17,28 +17,3 @@ urxvt*keysym.F11: perl:fullscreen:switch
 
 ! rxvt-256color is often rejected
 urxvt*termName: xterm-256color
-
-! colors
-urxvt*foreground:   #dff2f4
-urxvt*background:   [100]#040608
-urxvt*cursorColor:  #dff2f4
-
-! Colors 0-15.
-*.color0: #040608
-*.color1: #546F99
-*.color2: #996B93
-*.color3: #68A6C8
-*.color4: #62A0DF
-*.color5: #9FA8D4
-*.color6: #A2E9F8
-*.color7: #dff2f4
-*.color8: #9ca9aa
-*.color9: #546F99
-*.color10: #996B93
-*.color11: #68A6C8
-*.color12: #62A0DF
-*.color13: #9FA8D4
-*.color14: #A2E9F8
-*.color15: #dff2f4
-
-*.color66: #040608
