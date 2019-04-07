@@ -8,6 +8,7 @@ urxvt*depth: 32
 urxvt*internalBorder: 32
 urxvt*iso14755: false
 urxvt*iso14755_52: false
+urxvt*url-launcher: /usr/bin/xdg-open
 
 ! urxvt extensions
 urxvt*perl-ext-common: fullscreen,resize-font

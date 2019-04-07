@@ -1,8 +1,7 @@
-;polybar configuration
-
 [colors]
 background = ${xrdb:color0:#222}
 background-alt = ${xrdb:color0:#222}
+background-date = ${xrdb:color1:#222}
 foreground = ${xrdb:color7:#222}
 foreground-alt = ${xrdb:color7:#222}
 primary = ${xrdb:color4:#222}
@@ -10,145 +9,136 @@ secondary = ${xrdb:color2:#222}
 alert = ${xrdb:color6:#222}
 
 [bar/main]
-;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
-offset-x = 0%
-offset-y = 0%
-radius = 0
-fixed-center = true
+height = 36 
+offset-x = 0
+offset-y = -1 
+;bottom = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
-line-color = #f00
+underline-size = 2
+underline-color = #eee
 
-;border-size =
-;border-color =
-
+spacing = 1
 padding-left = 0
-padding-right = 5
+padding-right = 0
+module-margin-left = 0 
+module-margin-right = 0
 
-module-margin-left = 0
-module-margin-right = 5
+font-0 = Roboto:pixelsize=12;0
+font-1 = FontAwesome:size=14;1
 
-font-0 = "Roboto:size=11:antialias=true;3"
-font-1 = "FontAwesome:size=11;3"
+modules-left = bspwm xwindow
+modules-center = 
+modules-right = volume date powermenu
 
-modules-left = bspwm
-modules-center = xwindow
-modules-right = pulseaudio date powermenu
+;tray-position = right
+;tray-padding = 2
+;tray-background = #66333333
 
-tray-position = right
-tray-padding = 2
-tray-background = ${colors.background}
+wm-restack = bspwm
 
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
 
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+ws-icon-0 = web;
+ws-icon-1 = term;
+ws-icon-2 = chat;
+ws-icon-3 = code;
+ws-icon-4 = music;
+ws-icon-default = 
 
-label-occupied = %index%
-label-occupied-padding = 2
+format = <label-state> <label-mode>
 
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-focused = %icon%
+;label-focused-background = #88000000
+label-focused-background = ${colors.background}
+;label-focused-underline= #ddd
+label-focused-underline = ${colors.background-date}
+label-focused-padding = 4
 
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-occupied = %icon%
+label-occupied-padding = 4
 
-; Separator in between workspaces
-; label-separator = |
+label-urgent = %icon%
+label-urgent-padding = 4
+
+label-empty = %icon%
+label-empty-foreground = #44ffffff
+label-empty-padding = 4
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:120:...%
+label-padding = 4
 
 [module/date]
 type = internal/date
-interval = 5
 
-date =
-date-alt = " %Y-%m-%d"
+; Seconds to sleep between updates
+interval = 1.0
 
+; See "man date" for details on how to format the date string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+date = %d.%m.%Y,
+; Optional time format
 time = %H:%M
+
+; if `date-alt` or `time-alt` is defined, clicking
+; the module will toggle between formats
+date-alt = %A, %d.%m.%Y
 time-alt = %H:%M:%S
 
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.primary}
-
 label = %date% %time%
+format =    <label>
+format-background = ${colors.background-date}
+format-foreground = ${colors.background}
+format-padding = 3
 
-[module/pulseaudio]
-type = internal/pulseaudio
+[module/volume]
+type = internal/volume
 
-format-volume = <label-volume>
-label-volume =  %percentage%%
-label-volume-foreground = ${root.foreground}
+format-volume = <ramp-volume>  <label-volume>
+format-muted = <label-muted>
+label-volume = %percentage%
+label-muted =   muted
+label-muted-foreground = #aaa
+format-volume-padding = 3
+format-muted-padding = 3
 
-label-muted =  0%
-label-muted-foreground = ${root.foreground}
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-headphones-0 = 
 
 [module/powermenu]
 type = custom/menu
 
-expand-right = true
-
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.primary}
+label-open =   
+;label-open-background = #dd0000
+;label-open-foreground = #fff
 label-close = cancel
-label-close-foreground = ${colors.primary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
+;label-close-background = #dd0000
+;label-close-foreground = #fff
+label-open-padding = 4 
+label-close-padding = 3 
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
-menu-0-1 = off
+menu-0-1 = power off
 menu-0-1-exec = menu-open-2
+menu-0-0-padding = 3
+menu-0-1-padding = 3
 
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
+menu-1-0 = reboot?  
+menu-1-0-exec = sudo reboot
+menu-1-0-padding = 3
 
-menu-2-0 = power off
+menu-2-0 = power off?  
 menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-
-[settings]
-screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-;pseudo-transparency = false
-
-[global/wm]
-margin-top = 5
-margin-bottom = 5
-
-; vim:ft=dosini
+menu-2-0-padding = 3
