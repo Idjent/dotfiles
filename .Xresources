@@ -1,5 +1,5 @@
 ! urxvt settings 
-urxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=14:antialias=true,xft:DejaVu Sans:pixelsize=14, xft:DejaVu Sans Mono:pixelsize=14
+urxvt*font: xft:Roboto Mono:pixelsize=14:antialias=true,xft:DejaVu Sans:pixelsize=14, xft:DejaVu Sans Mono:pixelsize=14
 urxvt*boldFont:
 urxvt*letterSpace: 0
 urxvt*scrollBar: false
@@ -9,32 +9,36 @@ urxvt*internalBorder: 32
 urxvt*iso14755: false
 urxvt*iso14755_52: false
 
-
 ! urxvt extensions
 urxvt*perl-ext-common: fullscreen,resize-font
 
-!! fullscreen
+! fullscreen
 urxvt*keysym.F11: perl:fullscreen:switch
 
 ! rxvt-256color is often rejected
 urxvt*termName: xterm-256color
 
 ! colors
-*.foreground: #F8F8F2
-*.background: [70]#111111
-*.color0:     #000000
-*.color8:     #4D4D4D
-*.color1:     #FF5555
-*.color9:     #FF6E67
-*.color2:     #50FA7B
-*.color10:    #5AF78E
-*.color3:     #F1FA8C
-*.color11:    #F4F99D
-*.color4:     #BD93F9
-*.color12:    #CAA9FA
-*.color5:     #FF79C6
-*.color13:    #FF92D0
-*.color6:     #8BE9FD
-*.color14:    #9AEDFE
-*.color7:     #BFBFBF
-*.color15: #E6E6E6
+urxvt*foreground:   #dff2f4
+urxvt*background:   [100]#040608
+urxvt*cursorColor:  #dff2f4
+
+! Colors 0-15.
+*.color0: #040608
+*.color1: #546F99
+*.color2: #996B93
+*.color3: #68A6C8
+*.color4: #62A0DF
+*.color5: #9FA8D4
+*.color6: #A2E9F8
+*.color7: #dff2f4
+*.color8: #9ca9aa
+*.color9: #546F99
+*.color10: #996B93
+*.color11: #68A6C8
+*.color12: #62A0DF
+*.color13: #9FA8D4
+*.color14: #A2E9F8
+*.color15: #dff2f4
+
+*.color66: #040608
