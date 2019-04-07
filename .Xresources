@@ -1,11 +1,20 @@
 ! urxvt settings 
-urxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=14,xft:DejaVu Sans Mono:pixelsize=14
+urxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=14:antialias=true,xft:DejaVu Sans:pixelsize=14, xft:DejaVu Sans Mono:pixelsize=14
 urxvt*boldFont:
 urxvt*letterSpace: 0
 urxvt*scrollBar: false
 urxvt*pointerBlank: true
 urxvt*depth: 32
 urxvt*internalBorder: 32
+urxvt*iso14755: false
+urxvt*iso14755_52: false
+
+
+! urxvt extensions
+urxvt*perl-ext-common: fullscreen,resize-font
+
+!! fullscreen
+urxvt*keysym.F11: perl:fullscreen:switch
 
 ! rxvt-256color is often rejected
 urxvt*termName: xterm-256color
