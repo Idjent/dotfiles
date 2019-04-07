@@ -95,6 +95,9 @@ export ARCHFLAGS="-arch x86_64"
 
 # User
 
+# rbenv
+eval "$(rbenv init - )"
+
 # pywal
 (cat ~/.cache/wal/sequences &)
 
@@ -105,3 +108,5 @@ export XDG_CONFIG_HOME="$HOME/.config"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias gitc='/usr/bin/git --git-dir=/home/ident/.dotfiles/ --work-tree=/home/ident'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
