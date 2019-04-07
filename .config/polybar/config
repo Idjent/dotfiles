@@ -59,7 +59,7 @@ label-focused = %icon%
 ;label-focused-background = #88000000
 label-focused-background = ${colors.background}
 ;label-focused-underline= #ddd
-label-focused-underline = ${colors.background-date}
+label-focused-underline = ${colors.primary}
 label-focused-padding = 4
 
 label-occupied = %icon%
@@ -96,7 +96,7 @@ time-alt = %H:%M:%S
 
 label = %date% %time%
 format =    <label>
-format-background = ${colors.background-date}
+format-background = ${colors.primary}
 format-foreground = ${colors.background}
 format-padding = 3
 
