@@ -109,4 +109,7 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias gitc='/usr/bin/git --git-dir=/home/ident/.dotfiles/ --work-tree=/home/ident'
 
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
